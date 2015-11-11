@@ -5,6 +5,12 @@ var express,
     parentApp,
     errors;
 
+// console.log(process.env.DB_HOSTNAME);
+// console.log(process.env.DB_USERNAME);
+// console.log(process.env.DB_PASSWORD);
+// console.log(process.env.DB_NAME);
+// console.log(process.env.DB_PORT);
+
 // Make sure dependencies are installed and file system permissions are correct.
 require('./core/server/utils/startup-check').check();
 
