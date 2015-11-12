@@ -4,7 +4,7 @@
 // Ghost runs in `development` mode by default. Full documentation can be found at http://support.ghost.org/config/
 
 var path = require('path'),
-    config;
+config;
 
 config = {
     // ### Production
@@ -12,22 +12,33 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: process.env.URL,
-        mail: {},
-        database: {
-            client: 'mysql',
-            connection: {
-                host: process.env.DB_HOSTNAME,
-                user: process.env.DB_USERNAME,
-                password: process.env.DB_PASSWORD,
-                database: process.env.DB_NAME,
-                port: process.env.DB_PORT
-            },
-            debug: false
-        },
-        server: {
-            host: '127.0.0.1',
-            port: '8081'
-        },
+        mail: {
+         transport: 'SMTP',
+         host: 'smtp.mandrillapp.com',
+         port: 587,
+         options: {
+          service: 'Mandrill',
+          auth:{
+            user: process.env.EMAIL_USERNAME,
+            pass: process.env.EMAIL_PASSWORD
+        }
+    }
+},
+database: {
+    client: 'mysql',
+    connection: {
+        host: process.env.DB_HOSTNAME,
+        user: process.env.DB_USERNAME,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        port: process.env.DB_PORT
+    },
+    debug: false
+},
+server: {
+    host: '127.0.0.1',
+    port: '8081'
+},
         fileStorage: false // Until Ghost has S3 integration 
     },
 
