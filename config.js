@@ -14,10 +14,8 @@ config = {
         url: process.env.URL,
         mail: {
          transport: 'SMTP',
-         host: 'smtp.mandrillapp.com',
-         port: 587,
          options: {
-          service: 'Mandrill',
+          service: 'Sendgrid',
           auth:{
             user: process.env.EMAIL_USERNAME,
             pass: process.env.EMAIL_PASSWORD
