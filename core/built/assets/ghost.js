@@ -35680,7 +35680,7 @@ catch(err) {
 if (runningTests) {
   require("ghost/tests/test-helper");
 } else {
-  require("ghost/app")["default"].create({"LOG_ACTIVE_GENERATION":true,"LOG_TRANSITIONS":true,"LOG_TRANSITIONS_INTERNAL":true,"LOG_VIEW_LOOKUPS":true,"name":"ghost","version":"0.0.0+2cfc46d5"});
+  require("ghost/app")["default"].create({"LOG_ACTIVE_GENERATION":true,"LOG_TRANSITIONS":true,"LOG_TRANSITIONS_INTERNAL":true,"LOG_VIEW_LOOKUPS":true,"name":"ghost","version":"0.0.0+a2f45052"});
 }
 
 /* jshint ignore:end */
