@@ -16,6 +16,7 @@ config = {
          transport: 'SMTP',
          options: {
           service: 'Sendgrid',
+          port: 2525,
           auth:{
             user: process.env.EMAIL_USERNAME,
             pass: process.env.EMAIL_PASSWORD
@@ -25,7 +26,7 @@ config = {
 database: {
     client: 'mysql',
     connection: {
-        host: process.env.DB_HOSTNAME,
+        host: process.env.BLOG_MYSQL_SERVICE_SERVICE_HOST,
         user: process.env.DB_USERNAME,
         password: process.env.DB_PASSWORD,
         database: process.env.DB_NAME,
@@ -34,7 +35,7 @@ database: {
     debug: false
 },
 server: {
-    host: '127.0.0.1',
+    host: '0.0.0.0',
     port: '8081'
 },
         fileStorage: false // Until Ghost has S3 integration 
